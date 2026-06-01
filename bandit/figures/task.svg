@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 480 290"
+   font-family="Arial, 'Helvetica Neue', Helvetica, sans-serif"
+   version="1.1"
+   id="svg22"
+   sodipodi:docname="task.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview22"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.8333333"
+     inkscape:cx="240"
+     inkscape:cy="144.81818"
+     inkscape:window-width="2048"
+     inkscape:window-height="1094"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg22" />
+  <defs
+     id="defs1">
+    <marker
+       id="tip"
+       markerWidth="10"
+       markerHeight="10"
+       refX="7"
+       refY="3.2"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M0,0 L8,3.2 L0,6.4 Z"
+         fill="#111"
+         id="path1" />
+    </marker>
+  </defs>
+  <!-- ===================== SCREENS (drawn back->front, right on top) ===================== -->
+  <!-- S1 Choices -->
+  <rect
+     x="30"
+     y="52"
+     width="90"
+     height="90"
+     fill="#fff"
+     stroke="#111"
+     stroke-width="1.6"
+     id="rect1" />
+  <circle
+     cx="54"
+     cy="76"
+     r="14"
+     fill="#ec4a3b"
+     id="circle1" />
+  <circle
+     cx="94"
+     cy="76"
+     r="14"
+     fill="#1ec9da"
+     id="circle2" />
+  <circle
+     cx="54"
+     cy="116"
+     r="14"
+     fill="#57bf36"
+     id="circle3" />
+  <circle
+     cx="94"
+     cy="116"
+     r="14"
+     fill="#9b4dc4"
+     id="circle4" />
+  <!-- S2 Action -->
+  <rect
+     x="116"
+     y="62"
+     width="88"
+     height="90"
+     fill="#fff"
+     stroke="#111"
+     stroke-width="1.6"
+     id="rect4" />
+  <circle
+     cx="150"
+     cy="118"
+     r="14"
+     fill="#57bf36"
+     id="circle5" />
+  <!-- S3 Reward -->
+  <rect
+     x="192"
+     y="72"
+     width="88"
+     height="92"
+     fill="#fff"
+     stroke="#111"
+     stroke-width="1.6"
+     id="rect5" />
+  <text
+     x="198"
+     y="98"
+     font-size="13"
+     font-style="italic"
+     fill="#111"
+     id="text5"
+     style="-inkscape-font-specification:'Roboto Condensed,  Light Condensed';font-family:'Roboto Condensed';font-weight:300;font-style:normal;font-stretch:condensed;font-variant:normal">You won</text>
+  <text
+     x="198"
+     y="114"
+     font-size="13"
+     font-style="italic"
+     fill="#111"
+     id="text6"
+     style="-inkscape-font-specification:'Roboto Condensed,  Light Condensed';font-family:'Roboto Condensed';font-weight:300;font-style:normal;font-stretch:condensed;font-variant:normal">81 points!</text>
+  <circle
+     cx="236"
+     cy="140"
+     r="14"
+     fill="#57bf36"
+     id="circle6" />
+  <!-- S4 Inter-trial interval -->
+  <rect
+     x="270"
+     y="56"
+     width="96"
+     height="102"
+     fill="#fff"
+     stroke="#111"
+     stroke-width="1.6"
+     id="rect6" />
+  <line
+     x1="309"
+     y1="107"
+     x2="327"
+     y2="107"
+     stroke="#111"
+     stroke-width="3.4"
+     id="line6" />
+  <line
+     x1="318"
+     y1="98"
+     x2="318"
+     y2="116"
+     stroke="#111"
+     stroke-width="3.4"
+     id="line7" />
+  <!-- ===================== TOP LABELS ===================== -->
+  <text
+     x="75"
+     y="42"
+     id="text7"
+     style="font-size:17px;text-anchor:middle;fill:#111111;-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '"
+       id="tspan22">Choices</tspan></text>
+  <text
+     x="162"
+     y="40"
+     id="text8"
+     style="font-size:17px;text-anchor:middle;fill:#111111;-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">Action<tspan
+   font-size="11px"
+   font-style="italic"
+   dy="4"
+   id="tspan7"
+   style="-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">t</tspan></text>
+  <text
+     x="236"
+     y="48"
+     id="text9"
+     style="font-size:17px;text-anchor:middle;fill:#111111;-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">Reward<tspan
+   font-size="11px"
+   font-style="italic"
+   dy="4"
+   id="tspan8"
+   style="-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">t</tspan></text>
+  <text
+     x="320"
+     y="30"
+     id="text10"
+     style="font-size:17px;text-anchor:middle;fill:#111111;-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">Inter-trial</text>
+  <text
+     x="320"
+     y="48"
+     id="text11"
+     style="font-size:17px;text-anchor:middle;fill:#111111;-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">interval</text>
+  <!-- ===================== DURATIONS (two-line, receding down-right) ===================== -->
+  <text
+     x="46"
+     y="180"
+     id="text12"
+     style="font-size:15px;text-anchor:middle;fill:#111111"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '"
+       id="tspan23">&lt;4,000</tspan></text>
+  <text
+     x="46"
+     y="197"
+     id="text13"
+     style="font-size:17px;text-anchor:middle;fill:#111111;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '">ms</text>
+  <text
+     x="150"
+     y="193"
+     id="text14"
+     style="font-size:17px;text-anchor:middle;fill:#111111;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '">400</text>
+  <text
+     x="150"
+     y="210"
+     id="text15"
+     style="font-size:17px;text-anchor:middle;fill:#111111;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '">ms</text>
+  <text
+     x="236"
+     y="202"
+     id="text16"
+     style="font-size:17px;text-anchor:middle;fill:#111111;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '">800</text>
+  <text
+     x="236"
+     y="219"
+     id="text17"
+     style="font-size:17px;text-anchor:middle;fill:#111111;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '">ms</text>
+  <text
+     x="330"
+     y="207"
+     id="text18"
+     style="font-size:17px;text-anchor:middle;fill:#111111;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '">500</text>
+  <text
+     x="330"
+     y="224"
+     id="text19"
+     style="font-size:17px;text-anchor:middle;fill:#111111;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, '">ms</text>
+  <!-- ===================== TIME AXIS ARROW -> next trial ===================== -->
+  <line
+     x1="8"
+     y1="184"
+     x2="392"
+     y2="172"
+     stroke="#111"
+     stroke-width="1.6"
+     marker-end="url(#tip)"
+     id="line19" />
+  <text
+     x="392"
+     y="186"
+     font-size="16"
+     fill="#111"
+     id="text20"
+     style="-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17px;fill:#111111">Trial <tspan
+   font-style="italic"
+   id="tspan19"
+   style="-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17px;fill:#111111">t</tspan> + 1</text>
+  <text
+     x="372"
+     y="162"
+     font-size="18"
+     font-weight="700"
+     fill="#111"
+     id="text21"
+     style="-inkscape-font-specification:'Roboto Condensed,  Light Condensed';font-family:'Roboto Condensed';font-weight:300;font-style:normal;font-stretch:condensed;font-variant:normal">...</text>
+  <!-- ===================== TRIAL t BRACKET ===================== -->
+  <path
+     d="M16,212 L16,218 L344,242 L344,236"
+     fill="none"
+     stroke="#111"
+     stroke-width="1.5"
+     id="path21" />
+  <text
+     x="180"
+     y="256"
+     font-size="16"
+     fill="#111"
+     text-anchor="middle"
+     id="text22"
+     style="-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17px;fill:#111111">Trial <tspan
+   font-style="italic"
+   id="tspan21"
+   style="-inkscape-font-specification:'Roboto Condensed, ';font-family:'Roboto Condensed';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17px;fill:#111111">t</tspan></text>
+</svg>

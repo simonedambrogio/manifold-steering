@@ -1,0 +1,150 @@
+/* =========================================================================
+   Color-pair explorable — figure-specific styles.
+   Base typography + graph-scroll layout live in ../shared.css.
+   ========================================================================= */
+
+/* Give the interactive Plotly figures more room than the default layout.
+   The wider graphic mainly helps the wide steering figure; the square Mh/My
+   figures simply render a bit larger and centered. Part B (#graph2/#sections2)
+   mirrors the sticky two-column layout shared.css gives Part A. */
+body                 { max-width: 1280px; }
+#graph, #graph2      { width: 900px; }
+#sections, #sections2 { width: 320px; }
+
+/* shared.css styles #graph/#sections by id; replicate its sticky layout for the
+   second container so Part B scrolls identically to Part A. */
+#graph2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  float: right;
+  height: 100vh;
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sections2 { padding-bottom: 100vh; }
+#sections2 > div {
+  margin-bottom: 80vh;
+  opacity: .2;
+  transition: opacity .3s;
+}
+#sections2 > div.graph-scroll-active { opacity: 1; }
+#sections2 > div:first-child { margin-top: 10vh; }
+#sections2 > div:last-child  { margin-bottom: 0; }
+#sections2 h3 { margin-top: 0; font-size: 19px; color: #202124; }
+
+/* Each step's text rests lower — roughly aligned with the vertically-centered
+   figure — instead of riding up against the top of the viewport. padding-top
+   (not margin) so it doesn't collapse with the inter-step margin and applies to
+   every step. Tune the value to taste. */
+#sections > div, #sections2 > div { padding-top: 10vh; }
+
+/* Larger reading text for this presentation (overrides shared.css). Tune freely. */
+p                            { font-size: 20px; line-height: 1.6em; }
+#sections p, #sections2 p    { font-size: 20px; }
+#sections h3, #sections2 h3  { font-size: 24px; }
+
+/* Step 3 interlude: full-width text, then the model figure full-width below.
+   Breaks out of the scrolly two-column layout for this one step. */
+.interlude {
+  clear: both;                     /* clear Part A's floated sticky graphic */
+  max-width: 1180px;
+  margin: 4em auto;
+}
+.interlude h3 { font-size: 24px; color: #202124; }
+/* Left-align the text block with the heading (shared.css centers <p> via auto
+   margins); a wide reading measure, flush to the interlude's left edge. */
+.interlude p  { max-width: 1040px; margin-left: 0; margin-right: auto; }
+.interlude-fig {
+  position: relative;              /* .fig-fit inside is absolutely positioned */
+  width: 100%;
+  margin: 2em auto 0;
+}
+
+/* The scene fills the sticky graphic; each scene is an absolutely-positioned
+   layer that crossfades in/out. (#scene2 is Part B's mount; shared.css only
+   styles #scene, so it is sized here too.) */
+#scene, #scene2 {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  max-height: 700px;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;            /* inactive layers don't catch the mouse */
+  transition: opacity .5s ease;
+}
+.layer.active {
+  opacity: 1;
+  pointer-events: auto;            /* active figure is draggable/zoomable */
+}
+
+/* Each figure renders at its native size inside a fixed-viewport iframe, then
+   JS scales .fig-fit uniformly to fit the panel and centers it (left/top). This
+   reproduces the figure's designed framing exactly (same as the PDF) and is
+   deterministic: the iframe's internal viewport never changes, so Plotly never
+   re-frames the 3D camera. */
+.fig-fit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+}
+.fig-fit iframe {
+  border: 0;
+  display: block;
+  background: white;
+}
+
+/* Placeholder layers (task / model) — swap in an <img> later. */
+.placeholder {
+  width: 92%;
+  height: 88%;
+  border: 1px dashed #dadce0;
+  border-radius: 8px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #80868b;
+  padding: 1em;
+}
+.placeholder-step  { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.placeholder-label { font-size: 22px; color: #3C4043; margin: .3em 0 .6em; }
+.placeholder-hint  { font-size: 13px; color: #9aa0a6; max-width: 24em; }
+.placeholder-hint code { background: #f1f3f4; padding: 1px 5px; border-radius: 4px; }
+.placeholder img { max-width: 100%; max-height: 100%; }
+
+/* Responsive: below 925px Part B's graphic spans full width and steps stack,
+   mirroring shared.css's rules for Part A's #graph/#sections. */
+@media (max-width: 925px) {
+  #graph2 {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    height: 80vh;
+  }
+  #sections2 {
+    width: auto;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+  #sections2 > div {
+    background: rgba(255, 255, 255, .9);
+    padding: 1em;
+    border-radius: 8px;
+    margin-bottom: 80vh;
+  }
+  .interlude { max-width: 100%; }
+}

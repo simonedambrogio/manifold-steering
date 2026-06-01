@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 600 550"
+   font-family="'Helvetica Neue', Arial, sans-serif"
+   version="1.1"
+   id="svg88"
+   sodipodi:docname="task.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   width="600"
+   height="550"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview88"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.64186183"
+     inkscape:cx="518.02426"
+     inkscape:cy="299.90878"
+     inkscape:window-width="2048"
+     inkscape:window-height="1094"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg88"
+     showguides="true">
+    <sodipodi:guide
+       position="1104.535,350.06313"
+       orientation="0,-1"
+       id="guide88"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="741.92722,68.15449"
+       orientation="0,-1"
+       id="guide5"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <linearGradient
+       id="screenfill"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0"
+         stop-color="#dcd9d1"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#cac6bd"
+         id="stop2" />
+    </linearGradient>
+    <filter
+       id="cardshadow"
+       x="-0.052"
+       y="-0.04875"
+       width="1.1173333"
+       height="1.1225">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="3"
+         result="b"
+         id="feGaussianBlur2" />
+      <feOffset
+         in="b"
+         dx="2"
+         dy="4"
+         result="o"
+         id="feOffset2" />
+      <feComponentTransfer
+         in="o"
+         result="s"
+         id="feComponentTransfer2">
+        <feFuncA
+           type="linear"
+           slope="0.26"
+           id="feFuncA2" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge3">
+        <feMergeNode
+           in="s"
+           id="feMergeNode2" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode3" />
+      </feMerge>
+    </filter>
+    <marker
+       id="ar"
+       markerWidth="9"
+       markerHeight="9"
+       refX="7"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 7.5,3 0,6 Z"
+         fill="#2b2b2b"
+         id="path3" />
+    </marker>
+    <marker
+       id="arG"
+       markerWidth="9"
+       markerHeight="9"
+       refX="7"
+       refY="3"
+       orient="auto"
+       markerUnits="strokeWidth">
+      <path
+         d="M 0,0 7.5,3 0,6 Z"
+         fill="#3a9d5d"
+         id="path4" />
+    </marker>
+    <filter
+       id="softshadow"
+       x="-0.22777778"
+       y="-0.22777778"
+       width="1.4972222"
+       height="1.5388889">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur2-0" />
+      <feOffset
+         in="blur"
+         dx="1.5"
+         dy="3"
+         result="off"
+         id="feOffset2-2" />
+      <feComponentTransfer
+         in="off"
+         result="sh"
+         id="feComponentTransfer2-4">
+        <feFuncA
+           type="linear"
+           slope="0.20"
+           id="feFuncA2-8" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge4">
+        <feMergeNode
+           in="sh"
+           id="feMergeNode3-3" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4" />
+      </feMerge>
+    </filter>
+    <filter
+       id="softshadow-2"
+       x="-0.22777778"
+       y="-0.22777778"
+       width="1.4972222"
+       height="1.5388889">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur2-2" />
+      <feOffset
+         in="blur"
+         dx="1.5"
+         dy="3"
+         result="off"
+         id="feOffset2-7" />
+      <feComponentTransfer
+         in="off"
+         result="sh"
+         id="feComponentTransfer2-3">
+        <feFuncA
+           type="linear"
+           slope="0.20"
+           id="feFuncA2-7" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge4-9">
+        <feMergeNode
+           in="sh"
+           id="feMergeNode3-0" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4-2" />
+      </feMerge>
+    </filter>
+    <filter
+       id="softshadow-9"
+       x="-0.22777778"
+       y="-0.22777778"
+       width="1.4972222"
+       height="1.5388889">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur2-7" />
+      <feOffset
+         in="blur"
+         dx="1.5"
+         dy="3"
+         result="off"
+         id="feOffset2-0" />
+      <feComponentTransfer
+         in="off"
+         result="sh"
+         id="feComponentTransfer2-39">
+        <feFuncA
+           type="linear"
+           slope="0.20"
+           id="feFuncA2-86" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge4-5">
+        <feMergeNode
+           in="sh"
+           id="feMergeNode3-7" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4-6" />
+      </feMerge>
+    </filter>
+    <filter
+       id="softshadow-7"
+       x="-0.22777778"
+       y="-0.22777778"
+       width="1.4972222"
+       height="1.5388889">
+      <feGaussianBlur
+         in="SourceAlpha"
+         stdDeviation="3"
+         result="blur"
+         id="feGaussianBlur2-03" />
+      <feOffset
+         in="blur"
+         dx="1.5"
+         dy="3"
+         result="off"
+         id="feOffset2-9" />
+      <feComponentTransfer
+         in="off"
+         result="sh"
+         id="feComponentTransfer2-9">
+        <feFuncA
+           type="linear"
+           slope="0.20"
+           id="feFuncA2-9" />
+      </feComponentTransfer>
+      <feMerge
+         id="feMerge4-1">
+        <feMergeNode
+           in="sh"
+           id="feMergeNode3-72" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4-3" />
+      </feMerge>
+    </filter>
+  </defs>
+  <text
+     x="571.0257"
+     y="664.32898"
+     font-size="18.0778px"
+     fill="#5b564f"
+     text-anchor="middle"
+     id="text52"
+     style="stroke-width:1.50649" />
+  <text
+     x="109.44699"
+     y="33.184032"
+     font-size="24.3673px"
+     font-weight="600"
+     fill="#2b2b2b"
+     text-anchor="middle"
+     id="text14"
+     style="stroke-width:1.6805"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:condensed;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Light Condensed';stroke-width:1.6805"
+       id="tspan89">Stimuli</tspan></text>
+  <text
+     x="291.15591"
+     y="30.352291"
+     font-size="32.5901px"
+     font-weight="600"
+     fill="#2b2b2b"
+     text-anchor="middle"
+     id="text14-9"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:condensed;font-size:24.3673px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Light Condensed';fill:#2b2b2b;stroke-width:1.6805"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:condensed;font-size:24.3673px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Light Condensed';fill:#2b2b2b;stroke-width:1.6805"
+       id="tspan89-1">Response</tspan></text>
+  <text
+     x="466.116"
+     y="33.178082"
+     font-size="32.5901px"
+     font-weight="600"
+     fill="#2b2b2b"
+     text-anchor="middle"
+     id="text14-9-5"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:condensed;font-size:24.3673px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Light Condensed';fill:#2b2b2b;stroke-width:1.6805"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:condensed;font-size:24.3673px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Light Condensed';fill:#2b2b2b;stroke-width:1.6805"
+       id="tspan89-1-5">Feedback</tspan></text>
+  <g
+     id="g3"
+     transform="translate(-439.34689,-103.5764)">
+    <rect
+       x="478"
+       y="150"
+       width="150"
+       height="160"
+       rx="9"
+       fill="url(#screenfill)"
+       stroke="#a7a097"
+       stroke-width="1.2"
+       filter="url(#cardshadow)"
+       id="rect13"
+       style="fill:#e6e6e6" />
+    <g
+       id="g88"
+       transform="translate(-2,11.179187)">
+      <rect
+         x="501.40054"
+         y="178.98245"
+         width="36"
+         height="36"
+         rx="5"
+         fill="#f2c14e"
+         stroke="#ffffff"
+         stroke-width="2"
+         id="rect24-2"
+         style="filter:url(#softshadow-9)" />
+      <rect
+         x="501.40054"
+         y="223.65916"
+         width="36"
+         height="36"
+         rx="5"
+         fill="#f0a23a"
+         stroke="#ffffff"
+         stroke-width="2"
+         id="rect25"
+         style="filter:url(#softshadow-2)" />
+    </g>
+    <g
+       id="g89"
+       transform="translate(-14,11.179191)">
+      <rect
+         x="66"
+         y="364"
+         width="36"
+         height="36"
+         rx="5"
+         fill="#4e7af2"
+         stroke="#ffffff"
+         stroke-width="2"
+         id="rect26"
+         transform="rotate(90.040473,436.23229,549.84715)"
+         style="filter:url(#softshadow-7)" />
+      <rect
+         x="108"
+         y="364"
+         width="36"
+         height="36"
+         rx="5"
+         fill="#e0533a"
+         stroke="#ffffff"
+         stroke-width="2"
+         id="rect27"
+         transform="rotate(90.040473,434.90972,551.20034)"
+         style="filter:url(#softshadow-7)" />
+    </g>
+  </g>
+  <g
+     id="g2"
+     transform="translate(-439.34689,-102.07534)">
+    <rect
+       x="656.57471"
+       y="148.49895"
+       width="150"
+       height="160"
+       rx="9"
+       fill="url(#screenfill)"
+       stroke="#a7a097"
+       stroke-width="1.2"
+       filter="url(#cardshadow)"
+       id="rect20"
+       style="fill:#e6e6e6" />
+    <circle
+       cx="691.57471"
+       cy="228.49895"
+       r="17"
+       fill="none"
+       stroke="#8e877b"
+       stroke-width="1.5"
+       stroke-dasharray="4, 3"
+       id="circle22"
+       style="fill:#e6e6e6" />
+    <circle
+       cx="771.57471"
+       cy="228.49895"
+       r="17"
+       fill="none"
+       stroke="#8e877b"
+       stroke-width="1.5"
+       stroke-dasharray="4, 3"
+       id="circle23"
+       style="fill:#e6e6e6" />
+    <line
+       x1="731.57471"
+       y1="228.49895"
+       x2="706.57471"
+       y2="228.49895"
+       stroke="#3a9d5d"
+       stroke-width="2.2"
+       stroke-dasharray="5, 3"
+       marker-end="url(#arG)"
+       id="line23"
+       style="fill:#e6e6e6" />
+  </g>
+  <g
+     id="g1"
+     transform="translate(-439.34689,-102.07534)">
+    <rect
+       x="834.57471"
+       y="148.49895"
+       width="150"
+       height="160"
+       rx="9"
+       fill="url(#screenfill)"
+       stroke="#a7a097"
+       stroke-width="1.2"
+       filter="url(#cardshadow)"
+       id="rect23"
+       style="fill:#e6e6e6" />
+    <circle
+       cx="869.57471"
+       cy="228.49895"
+       r="20"
+       fill="none"
+       stroke="#3a9d5d"
+       stroke-width="2.8"
+       id="circle24"
+       style="fill:#e6e6e6" />
+    <rect
+       x="856.57471"
+       y="215.49895"
+       width="26"
+       height="26"
+       rx="3"
+       fill="#bef90c"
+       stroke="#ffffff"
+       stroke-width="1.6"
+       id="rect24"
+       style="fill:#e6e6e6" />
+    <path
+       d="m 861.5747,228.49895 5,6 11,-14"
+       fill="none"
+       stroke="#3a9d5d"
+       stroke-width="3"
+       stroke-linecap="round"
+       stroke-linejoin="round"
+       id="path24"
+       style="fill:#e6e6e6" />
+  </g>
+  <line
+     x1="41.826847"
+     y1="251.17413"
+     x2="541.79175"
+     y2="251.17413"
+     stroke="#5b564f"
+     stroke-width="1.06621"
+     marker-end="url(#ar)"
+     id="line24" />
+  <text
+     x="40.436832"
+     y="278.3215"
+     font-size="27.6125px"
+     fill="#5b564f"
+     id="text25"
+     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:condensed;font-size:24.3673px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Light Condensed';fill:#2b2b2b;stroke-width:1.6805">time</text>
+  <circle
+     cx="134.2963"
+     cy="334.70886"
+     r="6"
+     fill="#f90c0c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle27" />
+  <circle
+     cx="154.99631"
+     cy="337.40887"
+     r="6"
+     fill="#f9470c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle28" />
+  <circle
+     cx="174.2963"
+     cy="345.40887"
+     r="6"
+     fill="#f9830c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle29" />
+  <circle
+     cx="190.89633"
+     cy="358.10889"
+     r="6"
+     fill="#f9be0c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle30" />
+  <circle
+     cx="203.59628"
+     cy="374.70886"
+     r="6"
+     fill="#f9f90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle31" />
+  <circle
+     cx="211.59628"
+     cy="394.00885"
+     r="6"
+     fill="#bef90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle32" />
+  <circle
+     cx="214.2963"
+     cy="414.70886"
+     r="6"
+     fill="#83f90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle33" />
+  <circle
+     cx="211.59628"
+     cy="435.40887"
+     r="6"
+     fill="#47f90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle34" />
+  <circle
+     cx="203.59628"
+     cy="454.70886"
+     r="6"
+     fill="#0cf90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle35" />
+  <circle
+     cx="190.89633"
+     cy="471.30884"
+     r="6"
+     fill="#0cf947"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle36" />
+  <circle
+     cx="174.2963"
+     cy="484.00885"
+     r="6"
+     fill="#0cf983"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle37" />
+  <circle
+     cx="154.99631"
+     cy="492.00885"
+     r="6"
+     fill="#0cf9be"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle38" />
+  <circle
+     cx="134.2963"
+     cy="494.70886"
+     r="6"
+     fill="#0cf9f9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle39" />
+  <circle
+     cx="113.59628"
+     cy="492.00885"
+     r="6"
+     fill="#0cbef9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle40" />
+  <circle
+     cx="94.296295"
+     cy="484.00885"
+     r="6"
+     fill="#0c83f9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle41" />
+  <circle
+     cx="77.69632"
+     cy="471.30884"
+     r="6"
+     fill="#0c47f9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle42" />
+  <circle
+     cx="64.996307"
+     cy="454.70886"
+     r="6"
+     fill="#0c0cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle43" />
+  <circle
+     cx="56.996311"
+     cy="435.40887"
+     r="6"
+     fill="#470cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle44" />
+  <circle
+     cx="54.296329"
+     cy="414.70886"
+     r="6"
+     fill="#830cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle45" />
+  <circle
+     cx="56.996311"
+     cy="394.00885"
+     r="6"
+     fill="#be0cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle46" />
+  <circle
+     cx="64.996307"
+     cy="374.70886"
+     r="6"
+     fill="#f90cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle47" />
+  <circle
+     cx="77.69632"
+     cy="358.10889"
+     r="6"
+     fill="#f90cbe"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle48" />
+  <circle
+     cx="94.296295"
+     cy="345.40887"
+     r="6"
+     fill="#f90c83"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle49" />
+  <circle
+     cx="113.59628"
+     cy="337.40887"
+     r="6"
+     fill="#f90c47"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle50" />
+  <text
+     x="131.6788"
+     y="534.46484"
+     font-size="19.5843px"
+     font-weight="600"
+     fill="#2b2b2b"
+     text-anchor="middle"
+     id="text51"
+     style="stroke-width:1.50649"
+     dx="0 0 0 0 0 0 0 0 0 0 0 0 0"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Bold'"
+       id="tspan5">latent ring</tspan></text>
+  <circle
+     cx="419.15408"
+     cy="334.62686"
+     r="5.5"
+     fill="#f90c0c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle52" />
+  <circle
+     cx="439.8541"
+     cy="337.32687"
+     r="5.5"
+     fill="#f9470c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle53" />
+  <circle
+     cx="459.15408"
+     cy="345.32687"
+     r="5.5"
+     fill="#f9830c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle54" />
+  <circle
+     cx="475.75406"
+     cy="358.02689"
+     r="5.5"
+     fill="#f9be0c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle55" />
+  <circle
+     cx="488.45407"
+     cy="374.62686"
+     r="5.5"
+     fill="#f9f90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle56" />
+  <circle
+     cx="496.4541"
+     cy="393.92685"
+     r="5.5"
+     fill="#bef90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle57" />
+  <circle
+     cx="499.15411"
+     cy="414.62683"
+     r="5.5"
+     fill="#83f90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle58" />
+  <circle
+     cx="496.4541"
+     cy="435.32684"
+     r="5.5"
+     fill="#47f90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle59" />
+  <circle
+     cx="488.45407"
+     cy="454.62683"
+     r="5.5"
+     fill="#0cf90c"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle60" />
+  <circle
+     cx="475.75406"
+     cy="471.22681"
+     r="5.5"
+     fill="#0cf947"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle61" />
+  <circle
+     cx="459.15408"
+     cy="483.92682"
+     r="5.5"
+     fill="#0cf983"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle62" />
+  <circle
+     cx="439.8541"
+     cy="491.92682"
+     r="5.5"
+     fill="#0cf9be"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle63" />
+  <circle
+     cx="419.15408"
+     cy="494.62683"
+     r="5.5"
+     fill="#0cf9f9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle64" />
+  <circle
+     cx="398.45407"
+     cy="491.92682"
+     r="5.5"
+     fill="#0cbef9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle65" />
+  <circle
+     cx="379.15408"
+     cy="483.92682"
+     r="5.5"
+     fill="#0c83f9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle66" />
+  <circle
+     cx="362.55411"
+     cy="471.22681"
+     r="5.5"
+     fill="#0c47f9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle67" />
+  <circle
+     cx="349.8541"
+     cy="454.62683"
+     r="5.5"
+     fill="#0c0cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle68" />
+  <circle
+     cx="341.8541"
+     cy="435.32684"
+     r="5.5"
+     fill="#470cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle69" />
+  <circle
+     cx="339.15408"
+     cy="414.62683"
+     r="5.5"
+     fill="#830cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle70" />
+  <circle
+     cx="341.8541"
+     cy="393.92685"
+     r="5.5"
+     fill="#be0cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle71" />
+  <circle
+     cx="349.8541"
+     cy="374.62686"
+     r="5.5"
+     fill="#f90cf9"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle72" />
+  <circle
+     cx="362.55411"
+     cy="358.02689"
+     r="5.5"
+     fill="#f90cbe"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle73" />
+  <circle
+     cx="379.15408"
+     cy="345.32687"
+     r="5.5"
+     fill="#f90c83"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle74" />
+  <circle
+     cx="398.45407"
+     cy="337.32687"
+     r="5.5"
+     fill="#f90c47"
+     stroke="#ffffff"
+     stroke-width="1.1"
+     id="circle75" />
+  <circle
+     cx="475.93686"
+     cy="358.16827"
+     r="9"
+     fill="none"
+     stroke="#2b2b2b"
+     stroke-width="2"
+     id="circle76" />
+  <circle
+     cx="459.23001"
+     cy="345.63733"
+     r="9"
+     fill="none"
+     stroke="#2b2b2b"
+     stroke-width="2"
+     id="circle77" />
+  <circle
+     cx="379.15408"
+     cy="483.92682"
+     r="9"
+     fill="none"
+     stroke="#2b2b2b"
+     stroke-width="2"
+     id="circle78" />
+  <circle
+     cx="398.45407"
+     cy="337.32687"
+     r="9"
+     fill="none"
+     stroke="#2b2b2b"
+     stroke-width="2"
+     id="circle79" />
+  <path
+     d="m 470.88903,327.74791 a 62.267384,107.21784 44.821937 0 1 22.8905,22.74866"
+     fill="none"
+     stroke="#3a9d5d"
+     stroke-width="3.51432"
+     stroke-linecap="round"
+     id="path79"
+     style="fill:none;stroke:#8d8579;stroke-width:4;stroke-linecap:round" />
+  <path
+     d="m 366.15408,506.42684 a 106,106 0 0 1 25.6,-194.2"
+     fill="none"
+     stroke="#8d8579"
+     stroke-width="4"
+     stroke-linecap="round"
+     id="path80" />
+  <text
+     x="494.51624"
+     y="330.79938"
+     font-size="12px"
+     font-weight="600"
+     fill="#3a9d5d"
+     id="text80"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.0547px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#6f685d;fill-opacity:1;stroke-width:1.33789"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.0547px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';fill:#6f685d;stroke-width:1.33789"
+       id="tspan4">pair left</tspan></text>
+  <text
+     x="305.92776"
+     y="398.67557"
+     font-size="16.0547px"
+     fill="#6f685d"
+     text-anchor="end"
+     id="text81"
+     style="stroke-width:1.33789"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed, ';stroke-width:1.33789"
+       id="tspan3">pair right</tspan></text>
+  <text
+     x="419.91037"
+     y="532.04437"
+     font-size="13px"
+     font-weight="600"
+     fill="#2b2b2b"
+     text-anchor="middle"
+     id="text82"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.5843px;font-family:'Roboto Condensed';-inkscape-font-specification:'Roboto Condensed,  Bold';fill:#2b2b2b;stroke-width:1.50649">choose the smaller-arc pair</text>
+</svg>

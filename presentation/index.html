@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manifold Steering — figure walkthroughs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* Landing-page-only styles. */
+    ol.figure-list { list-style: none; padding: 0; max-width: 750px; margin: 2em auto; }
+    ol.figure-list li { margin: 0 0 1px; }
+    ol.figure-list a {
+      display: block;
+      padding: 20px 24px;
+      border: 1px solid #ebebeb;
+      border-radius: 8px;
+      color: inherit;
+      transition: background .15s, border-color .15s;
+    }
+    ol.figure-list a:hover { background: #fafafa; border-color: #dadce0; text-decoration: none; }
+    ol.figure-list .num { color: #80868b; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    ol.figure-list .title { font-size: 20px; color: #202124; margin: .2em 0; }
+    ol.figure-list .blurb { color: #5f6368; font-size: 15px; }
+  </style>
+</head>
+<body>
+
+  <h1>Manifold Steering — figure walkthroughs</h1>
+
+  <p class="byline">A reproduction and extension of Goodfire (2026) &middot; <i>Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior</i></p>
+
+  <p>Scroll-driven explainers for this project's key results, in presentation
+  order. Each one is self-contained &mdash; open it on its own, or step through
+  them in sequence.</p>
+
+  <ol class="figure-list" id="figure-list"></ol>
+
+  <footer>Built with d3 + graph-scroll, after the
+  <a href="https://pair.withgoogle.com/explorables/">Google PAIR explorables</a>.</footer>
+
+  <script src="figures.js"></script>
+  <script>
+    // Render the manifest as an ordered list of links.
+    var list = document.getElementById('figure-list');
+    (window.FIGURES || []).forEach(function (fig, i) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = fig.dir + '/index.html';
+      a.innerHTML =
+        '<div class="num">Figure ' + (i + 1) + '</div>' +
+        '<div class="title">' + fig.title + '</div>' +
+        '<div class="blurb">' + (fig.blurb || '') + '</div>';
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>

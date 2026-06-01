@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The color pair experiment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <p class="topnav"><a href="../index.html">&larr; all figures</a></p>
+
+  <h1>The color pair experiment</h1>
+
+  <p class="byline">A reproduction and extension of Goodfire (2026) &middot; <i>Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior</i></p>
+
+  <p>A controlled test of the paper's central claim. A network given no
+  geometric hint will, when the task demands it, <b>fold</b> its representations
+  into the right shape, and that shape then governs its behavior. Scroll through
+  the task, the model, and the geometry we recover from it.</p>
+
+  <!-- Part A: the task (steps 1-2). Scrolly: sticky figure + text column. -->
+  <div class="container-1" id="part-a">
+
+    <div id="graph">
+      <!-- script.js fills this with one stacked layer per scene and crossfades
+           between them as the active step changes. -->
+      <div id="scene"></div>
+    </div>
+
+    <div id="sections">
+
+      <div data-scene="task">
+        <h3>1 &middot; The task</h3>
+        <p>Twenty-four colors live on a <b>hidden ring</b>. Each trial shows two
+        pairs of colors, and the model must pick the pair whose colors are
+        <b>closer around the ring</b>.</p>
+        <p>The ring is never given. Colors arrive as <b>one-hot</b> codes, so
+        every color starts equally far from every other. The only place the ring
+        exists is in which answer is rewarded.</p>
+      </div>
+
+      <div data-scene="task">
+        <h3>2 &middot; The seam</h3>
+        <p>The giveaway is the <b>seam</b>. A pair like (color&nbsp;23,
+        color&nbsp;1) is <i>near</i> around the ring but <i>far</i> on a line. A
+        model that learned only a line gets these wrong. To get them right it has
+        no choice but to <b>fold the colors into a ring</b>, which is exactly the
+        folding geometry the paper is about.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Step 3: full-width interlude. Standard flow: text first, figure below. -->
+  <section class="interlude">
+    <h3>3 &middot; The model and how we train it</h3>
+    <p>Deliberately free of any geometric prior. A shared <b>encoder
+    &phi;</b> maps each one-hot color to a point in &#8477;<sup>8</sup>, and
+    a learned <b>comparator g</b> scores how close two embedded colors are.
+    The choice is <span class="nowrap">sigmoid(g(pair&#8321;) &minus;
+    g(pair&#8320;))</span>, trained with cross entropy.</p>
+    <p>We <b>withhold</b> whole pairs (and add a <b>k=1</b> control that
+    <i>cannot</i> fold) so the model cannot memorize a lookup table. To
+    generalize, it must place a reusable <b>ring metric</b> inside &phi;.
+    Then we go look.</p>
+    <div class="interlude-fig">
+      <!-- Iframed model.svg at native size; script.js scales .fig-fit to fill
+           this full-width box (same fit technique as the scrolly figures). -->
+      <div class="fig-fit"><iframe id="model-fig" scrolling="no" width="1289" height="500"></iframe></div>
+    </div>
+  </section>
+
+  <!-- Part B: the results (steps 4-10). Scrolly: sticky figure + text column. -->
+  <div class="container-1" id="part-b">
+
+    <div id="graph2">
+      <div id="scene2"></div>
+    </div>
+
+    <div id="sections2">
+
+      <div data-scene="pca">
+        <h3>4 &middot; The learned embeddings</h3>
+        <p>Here is &phi; for all 24 colors, projected onto its top three
+        principal components. Each diamond is one color's learned embedding. Drag
+        to rotate.</p>
+      </div>
+
+      <div data-scene="pca">
+        <h3>5 &middot; A ring appears</h3>
+        <p>Connect the colors <b>in ring order</b> and they close into a loop.
+        The seam color sits right next to color&nbsp;0. The network folded the
+        latent ring into its representations with no prompting. This is the
+        <b>activation manifold</b> <span class="nowrap">&#8499;<sub>h</sub></span>.</p>
+      </div>
+
+      <div data-scene="behavior">
+        <h3>6 &middot; The ring is in the behavior too</h3>
+        <p>Using only the model's <b>binary choices</b>, never its internals, we
+        reconstruct distances between colors and embed them with MDS. The same
+        rainbow loop returns. The model's <b>behavior</b>, not just its
+        representation, honors the ring. This is the <b>behavior manifold</b>
+        <span class="nowrap">&#8499;<sub>y</sub></span>.</p>
+      </div>
+
+      <div data-scene="steer1">
+        <h3>7 &middot; Steering along the manifold</h3>
+        <p>Now the causal test. We move one color's activation <b>along the fitted
+        manifold</b> from yellow to blue, and read the model's behavior from its
+        <b>choices only</b>.</p>
+        <p>Press <b>play</b>: as the activation passes the midpoint color (green),
+        <span class="nowrap">P(action)</span> for green rises to a peak, then fades.
+        Steering on the manifold makes the model behave as <i>each</i> color it
+        passes through.</p>
+      </div>
+
+      <div data-scene="steer2">
+        <h3>8 &middot; &hellip; versus a straight line</h3>
+        <p>Now the <b style="color:#c0392b">linear</b> steer appears below: a
+        straight chord between the same two endpoints. It cuts through the
+        <b>interior</b> of the ring, skipping the colors on the rim.</p>
+        <p>Press <b>play</b>: <span class="nowrap">P(action)</span> for green stays
+        <b>flat at zero</b>. The linear path <b>teleports</b> from yellow to blue
+        without ever behaving as green. Same endpoints, opposite behavior: only the
+        manifold carries the concept.</p>
+      </div>
+
+      <div data-scene="steer3">
+        <h3>9 &middot; Every color in between</h3>
+        <p>The same manifold steer, now reading <b>five colors at once</b> along the
+        way: yellow, a yellow-green, green, cyan, and blue.</p>
+        <p>Press <b>play</b>: each color's <span class="nowrap">P(action)</span>
+        rises and falls <b>in turn</b> as the activation sweeps past it, a clean
+        ordered march, like one concept handing off to the next.</p>
+      </div>
+
+      <div data-scene="steer4">
+        <h3>10 &middot; The straight line skips them all</h3>
+        <p>The <b style="color:#c0392b">linear</b> steer appears below. Press
+        <b>play</b>: only <b>yellow</b> (the start) and <b>blue</b> (the end) ever
+        light up; the three colors in between stay <b>flat at zero</b>.</p>
+        <p>The chord jumps straight from one endpoint to the other through empty,
+        off-manifold space, so the model never passes through the intermediate
+        colors. The manifold visits every color; the straight line visits none.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <p>Same conceptual ring, three views: built into the representation, expressed
+  in behavior, and the axis along which steering stays natural. That triple is
+  the paper's thesis, reproduced in a network we trained from scratch.</p>
+
+  <footer>Built with d3 + graph-scroll, after the
+  <a href="https://pair.withgoogle.com/explorables/">Google PAIR explorables</a>.
+  Figures rendered with Plotly.</footer>
+
+  <script src="../lib/d3.v5.min.js"></script>
+  <script src="../lib/graph-scroll.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

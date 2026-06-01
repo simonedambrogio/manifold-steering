@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Value steering in a bandit</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <p class="topnav"><a href="../index.html">&larr; all figures</a></p>
+
+  <h1>Value steering in a bandit</h1>
+
+  <p class="byline">A reproduction and extension of Goodfire (2026) &middot; <i>Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior</i></p>
+
+  <p>The same thesis, in a value-based setting. An agent holds latent
+  <b>value beliefs</b> over the arms of a multi-armed bandit; we ask whether
+  those beliefs live on a structured manifold, and whether <b>steering along
+  it</b> moves the agent's choices the way the geometry predicts.</p>
+
+  <div class="container-1">
+
+    <div id="graph">
+      <!-- script.js fills this with one stacked layer per scene and crossfades
+           between them as the active step changes. For now: a single task
+           placeholder. -->
+      <div id="scene"></div>
+    </div>
+
+    <div id="sections">
+
+      <div data-scene="task">
+        <h3>1 &middot; The task</h3>
+        <p>A <b>four-armed bandit</b>. On each trial the agent chooses an arm and
+        receives a reward, and over time it forms a <b>value estimate</b> for
+        each arm. These values are the quantity we will later read off its
+        internal representation and steer.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Step 2: full-width stacked layout — title on top, figure spanning below
+       (deliberately breaks out of the side-by-side graph-scroll used above). -->
+  <section class="fullstep">
+    <h3>2 &middot; Collecting the data</h3>
+    <p>On every trial we hand Llama its own <b>raw history</b> &mdash; each past
+    press and its payout &mdash; and read the <b>next-token distribution</b> over
+    the arm letters as its choice. We sample that choice, deliver the scheduled
+    reward, append the new line, and repeat. Across roughly 150 trials and 400
+    episodes this builds the behavioral dataset we model and later steer.</p>
+    <img class="fullfig" src="assets/data_collection.svg?v=1"
+         alt="Data collection: Llama plays the restless bandit">
+  </section>
+
+  <!-- Step 3: default left/right split — text beside the performance figure. -->
+  <section class="splitstep">
+    <div class="split-text">
+      <h3>3 &middot; Does it actually learn?</h3>
+      <p>Each grey dot is one episode's <b>relative reward</b> &mdash; 0 means
+      choosing at random, 1 means the (impossible) perfect policy. Llama's
+      episodes pile up well above chance: its group average (black) sits at
+      <b>+0.37</b>.</p>
+      <p>Human participants from the original study (purple, &asymp;0.6 read
+      from Fig 1f) still do better, but Llama is unmistakably <b>playing the
+      task, not guessing</b>. That above-chance value tracking is exactly what
+      makes the next question &mdash; can we <b>steer</b> it? &mdash; worth
+      asking.</p>
+    </div>
+    <div class="split-fig">
+      <iframe src="assets/behavior_performance.html?v=1" scrolling="no"
+              title="Aggregate performance: Llama vs human relative reward"></iframe>
+    </div>
+  </section>
+
+  <!-- Step 4: default left/right split — model comparison beside the accuracy figure. -->
+  <section class="splitstep">
+    <div class="split-text">
+      <h3>4 &middot; Which model explains its choices?</h3>
+      <p>We fit a ladder of models to Llama's choices, from a simple Q learner with
+      two parameters (SimpleRL) up to flexible recurrent networks with thousands of
+      parameters (VanillaRNN, MemoryANN).</p>
+      <p>On action prediction accuracy the six parameter <b>BestRL</b> already matches
+      the much larger RNNs (about <b>0.49</b>, well above the 0.25 chance line and far
+      above SimpleRL), and the two are statistically indistinguishable (<b>P&nbsp;=&nbsp;0.98</b>).
+      A compact, interpretable model captures how Llama plays, so we build the rest of
+      the analysis on it.</p>
+    </div>
+    <div class="split-fig">
+      <iframe src="assets/model_comparison.html?v=1" scrolling="no"
+              title="Action prediction accuracy across the cognitive model ladder"></iframe>
+    </div>
+  </section>
+
+  <!-- Step 5: default left/right split — fitted parameters beside the model schematic. -->
+  <section class="splitstep">
+    <div class="split-text">
+      <h3>5 &middot; How Llama plays &mdash; the fitted model</h3>
+      <p>A six-parameter Q-learner (<b>delta-rule value + perseveration</b>) fit to
+      Llama's choice distribution recovers the value <b>Q<sub>t</sub></b> it tracks
+      and how it turns that value into a choice.</p>
+      <table class="params">
+        <tr><td class="sym">&#945;</td><td class="val">= 0.16</td><td class="role">learning rate</td></tr>
+        <tr><td class="sym">f</td><td class="val">= 0.04</td><td class="role">forgetting</td></tr>
+        <tr><td class="sym">Q<sub>init</sub></td><td class="val">= &#8722;222</td><td class="role">value floor</td></tr>
+        <tr><td class="sym">&#946;</td><td class="val">= 0.016</td><td class="role">inverse temperature</td></tr>
+        <tr class="pp"><td class="sym">&#954;<sub>p</sub></td><td class="val">= 1.0</td><td class="role">persistent stickiness</td></tr>
+        <tr class="pp"><td class="sym">&#954;<sub>t</sub></td><td class="val">= 1.0</td><td class="role">transient (repeat last)</td></tr>
+      </table>
+      <p>Both perseveration terms are pinned at their ceiling and
+      &#946; is tiny: Llama is strongly <b>habitual</b>, inclined to repeat the arm it
+      just chose. Yet a moderate <b>&#945;</b> with slow forgetting means it still
+      <b>tracks reward</b>, while unchosen arms decay toward a deep floor
+      (Q<sub>init</sub> &asymp; &#8722;222). The net strategy: <b>find the best arm,
+      suppress the rest, and stick to it</b> &mdash; exploitation driven by a large
+      value gap, not a sharp temperature.</p>
+    </div>
+    <div class="split-fig">
+      <img class="schematic" src="assets/cogmod_slide.svg?v=1"
+           alt="BestRL cognitive-model schematic: delta-rule value learning + perseveration">
+    </div>
+  </section>
+
+  <!-- Step 6: full-width — the recovered value trajectory beside the ground truth. -->
+  <section class="fullstep">
+    <h3>6 &middot; Watching the value move</h3>
+    <p>Run that fitted model forward and you get <b>Q<sub>t</sub></b> &mdash;
+    Llama's running value for each arm, its internal belief about which option
+    is paying off. Plotted trial by trial (<b>left</b>), it climbs for the arm
+    Llama favours and decays for the rest. Set it beside the schedule's
+    <b>true reward means</b> (<b>right</b>) and the two track. In the bottom
+    episode the best arm even changes hands midway &mdash; and Q follows the
+    switch. This trajectory, the value Llama actually carries, is the quantity
+    we set out to <b>steer</b>.</p>
+    <iframe class="fullfig-frame" src="assets/behavior_traces.html?v=1" scrolling="no"
+            title="Recovered value estimate Q vs true reward means, per example episode"></iframe>
+  </section>
+
+  <!-- Transition (thesis): the pivot from Act I (value tracked behaviorally) to
+       Act II (its geometry). A standard full width step so the arrow keys reach it;
+       deliberately unnumbered, marking a turn in the argument. -->
+  <section class="fullstep thesis-step">
+    <h3>From behavior to geometry</h3>
+    <p>The paper showed that for concepts that <b>are</b> the output (the weekday
+    words), representation geometry shapes behavior. In the bandit the output is a
+    <b>choice</b>, and value is a <b>latent</b> that mediates it but is never emitted.</p>
+    <p class="bigq">Does the paper's geometry framework extend to a
+    <b>latent intermediate variable</b>, one the model never outputs?</p>
+    <p>Our thesis: it does. Value is encoded on a structured <b>manifold</b>, and
+    steering along that manifold moves Llama's choices the way the geometry predicts.</p>
+  </section>
+
+  <!-- Step 7: default left/right split — text beside the residual-stream diagram. -->
+  <section class="splitstep">
+    <div class="split-text">
+      <h3>7 &middot; Reading the residual stream</h3>
+      <p>To look inside, we tap the <b>residual stream</b> &mdash; the running vector
+      every layer reads from and writes back to as Llama processes the prompt. At the
+      <b>decision token</b> it carries everything the model has computed about the choice
+      it is about to make.</p>
+      <p>We read it out at a single layer (<b>layer 19</b>), giving one
+      <b>4096-dimensional activation</b> per trial: a snapshot of Llama's internal state
+      at the moment of choice. Projected onto its top principal components, each trial
+      becomes a point &mdash; the raw material for everything that follows:
+      <b>decoding</b> value, mapping its geometry, and <b>steering</b>.</p>
+    </div>
+    <div class="split-fig">
+      <img class="llm-diagram" src="assets/llm-diagram.svg?v=1"
+           alt="Extracting the layer-19 residual-stream activation at the decision token">
+    </div>
+  </section>
+
+  <!-- Step 8: full-width — the decoding analysis (wide 2×4 panel). -->
+  <section class="fullstep wide-step">
+    <h3>8 &middot; Every arm's value is in there</h3>
+    <p>We train a ridge probe from the layer-19 activation to each arm's value, then test
+    it on <b>held-out episodes</b>. <b>Top row &mdash; by arm identity</b> (B, C, D, F):
+    every arm's value lands on a tight line (r² &asymp; 0.95). <b>Bottom row &mdash; by
+    value rank</b>: the structure is <b>graded</b> &mdash; the best arm is read almost
+    perfectly, while the ambiguous 3rd-place value is the fuzziest.</p>
+    <p>So the residual stream doesn't merely encode <i>which</i> arm is best &mdash; it
+    carries the <b>full graded value of all four arms</b>. That is the latent we will map
+    and steer.</p>
+    <iframe class="fullfig-frame wide" src="assets/decode_arms.html?v=1" scrolling="no"
+            title="Decoding each arm's value from the layer-19 residual stream"></iframe>
+  </section>
+
+  <!-- Step 9: default left/right split — text beside the value-belief geometry (3-D simplex). -->
+  <section class="splitstep geom-step">
+    <div class="split-text">
+      <h3>9 &middot; The value has a shape</h3>
+      <p>Decoding gives each arm's value; centring across arms (the choice ignores the
+      overall level) and keeping the top directions yields the <b>choice-relevant value
+      subspace</b>. Project every trial into it and the belief takes a clear form: a
+      <b>four-arm simplex</b>. Each corner is a region where one arm (B, C, D, F) is
+      clearly best; the cloud between corners is the graded in-between, and moving along an
+      edge is <b>one arm's value rising as another's falls</b>. This structured surface
+      &mdash; the <b>value manifold</b> &mdash; is what the rest of the story steers along.</p>
+      <p class="caption">A supervised projection (axes built from the decoded value), so
+      read it as a picture of the structure, not an independent test &mdash; a thin
+      (&asymp;5% of variance) but highly decodable slice. <i>Drag to rotate.</i></p>
+    </div>
+    <div class="split-fig">
+      <iframe class="geom-frame" src="assets/value_belief_geometry.html?v=3" scrolling="no"
+              title="Value-belief geometry: the 4-arm simplex in the choice-relevant value subspace"></iframe>
+    </div>
+  </section>
+
+  <!-- Step 10: default left/right split — the unsupervised raw-PCA counterpart. -->
+  <section class="splitstep geom-step">
+    <div class="split-text">
+      <h3>10 &middot; The same shape, unsupervised</h3>
+      <p>The last view built its axes <i>from</i> the decoded value &mdash; so a skeptic
+      could call the simplex a self-fulfilling projection. So here we don't. We take the
+      raw <b>layer-19 residual stream</b> and keep only its <b>first three principal
+      components</b> &mdash; PCA sees activations alone, no value, no labels.</p>
+      <p>Within a fixed trial window (so time-in-episode doesn't swamp everything), the same
+      <b>four-arm tetrahedron</b> falls out on its own: trials cluster by which arm is best
+      at <b>94%</b> (chance 25%), and the fitted value-manifold edges thread right through
+      them. The structure is in the <b>geometry</b>, not in the projection.</p>
+      <p class="caption">Top-3 PCs of the raw L19 activations, trials 95&ndash;105 (no value
+      used). Black = fitted M<sub>h</sub> value-manifold edges. <i>Drag to rotate.</i></p>
+    </div>
+    <div class="split-fig">
+      <iframe class="geom-frame" src="assets/raw_pca3_geometry.html?v=3" scrolling="no"
+              title="Unsupervised top-3 PCA of the layer-19 residual stream: the which-best tetrahedron"></iframe>
+    </div>
+  </section>
+
+  <!-- Step 11: default left/right split — the behaviour simplex M_y (structural correspondence). -->
+  <section class="splitstep geom-step">
+    <div class="split-text">
+      <h3>11 &middot; Behaviour wears the same simplex</h3>
+      <p>So the <b>representation</b> holds a four-arm simplex. Does the model's
+      <b>behaviour</b> honour it? Embed each trial's <b>choice distribution</b> in the choice
+      simplex: the corners are the four pure-arm choices, and the cloud collapses toward
+      whichever arm is best. The <b>same tetrahedron</b> appears &mdash; now in behaviour
+      space. This match between the geometry of the <b>representation</b> and the geometry of
+      <b>behaviour</b> is the structural correspondence at the heart of the thesis.</p>
+      <p>One twist: the behaviour edges (black) are <b>nearly straight</b>, lying on the
+      linear chords (dashed), while the representation edges <b>curve</b>. The value manifold
+      bends; behaviour doesn't &mdash; a <b>non-folding</b> latent. That is exactly why
+      steering it is a question of <b>pacing</b>, not of avoiding wrong-answer detours.</p>
+      <p class="caption">Choice-distribution tetrahedron (barycentric). Black = M<sub>y</sub>
+      edge (Hellinger), dashed = linear mixture; arc/chord &asymp; 1.1. <i>Drag to rotate.</i></p>
+    </div>
+    <div class="split-fig">
+      <iframe class="geom-frame" src="assets/behavior_simplex_geometry.html?v=3" scrolling="no"
+              title="Behaviour simplex M_y: the choice-distribution tetrahedron with nearly-straight edges"></iframe>
+    </div>
+  </section>
+
+  <!-- Step 12: full-width — the causal steering animation (scaled to fit via JS). -->
+  <section class="fullstep anim-step">
+    <h3>12 &middot; Steering the value moves the choice</h3>
+    <p>The causal test. We push Llama's <b>layer-19 activation along the value manifold</b>
+    &mdash; the C&rarr;D edge &mdash; and read its choice from the next-token distribution
+    alone, never touching the output. As the activation slides from the <i>C-is-best</i>
+    corner to the <i>D-is-best</i> corner, the choice hands off in turn: <b>P(C) falls and
+    P(D) rises</b>, tracking the model's natural transition. The geometry doesn't just
+    describe the value &mdash; intervening on it <b>moves the behaviour</b>.</p>
+    <p>And the manifold matters (toggle <b>linear</b>): a straight chord between the same two
+    corners reaches the same endpoints, but at the wrong <b>pace</b> &mdash; the manifold
+    matches the natural crossover timing, the line lags. For this <b>non-folding</b> latent
+    the payoff is faithful pacing, not avoiding off-manifold detours.</p>
+    <p class="caption">Left: unsupervised L19 geometry; black = the C&rarr;D steer path.
+    Right: induced P(arm) vs steer fraction; grey = natural. <i>Press play; toggle "linear"
+    to compare.</i></p>
+    <div class="anim-fig"><div class="fig-fit"><iframe scrolling="no" width="1280" height="620"
+         title="Causal steering: move the layer-19 activation along the C→D value manifold and read P(action)"></iframe></div></div>
+  </section>
+
+  <footer>Built with d3 + graph-scroll, after the
+  <a href="https://pair.withgoogle.com/explorables/">Google PAIR explorables</a>.
+  Figures rendered with Plotly.</footer>
+
+  <script src="../lib/d3.v5.min.js"></script>
+  <script src="../lib/graph-scroll.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

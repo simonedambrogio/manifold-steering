@@ -1,0 +1,55 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# --- Environments ---
+.venv/
+venv/
+env/
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Generated outputs — keep source clean ---
+# (no trailing slash: artifacts is a symlink to /Volumes/PROJECTS-DATA)
+artifacts
+
+# Regenerable figure outputs (the deployed copies live in presentation/*/assets/)
+colorpair/figures/*.html
+colorpair/figures/*.pdf
+bandit/figures/*.html
+bandit/figures/*.json
+bandit/figures/*_preview.png
+
+# --- Internal material (notes, slides, reference articles) ---
+presentation/powerpoint/
+dev/context/*
+!dev/context/value-steering/
+dev/context/value-steering/*
+!dev/context/value-steering/summary.md
+
+# --- Exploratory testbeds not part of the published results ---
+agent/
+gridnav/
+slots_rnn/
+analyses/collect_gru_activations.py
+analyses/collect_nav_activations.py
+analyses/collect_rnn_hidden.py
+analyses/collect_xie_hidden.py
+analyses/steer_xie.py
+analyses/ring_test.py
+llm_data/nav_llm.py
+llm_data/nav_prompt.py
+llm_data/nav_rollout.py
+figures/fig_isometry_ring.py
+figures/fig_steering_ring.py

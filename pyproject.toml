@@ -1,0 +1,21 @@
+[project]
+name = "manifold_steering"
+version = "0.0.1"
+description = "Steering an LLM's value beliefs along the representation manifold (4-armed bandit)."
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.5",
+    "numpy>=2.0",
+    "scipy>=1.14",
+    "matplotlib>=3.9",
+    "plotly>=5.24",
+    "kaleido==0.2.1",
+    "transformers>=4.45",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["analyses", "bandit", "cogmod", "colorpair", "figures", "llm_data"]
